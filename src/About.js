@@ -1,12 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import HeroSection from './Components/HeroSection';
+import {AppContext} from "./context/productContext"
 
 const About = () => {
+  const {myName} = useContext(AppContext);
+  console.log("my_name", myName)
   const data = {
     name: "Ajay Ecommerce"
   }
   return (
-    <HeroSection myData={data} />
+    <>
+      {myName}
+      <HeroSection myData={data} />
+    </>
   )
 }
 
